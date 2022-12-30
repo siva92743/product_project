@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <table class="table">
+            <thead>
+            <th>sl No.</th>
+            <th>product_name</th>
+            <th>category_id</th>
+            <th>price</th>
+            <th>edit</th>
+            <th>delete</th>
+            </thead>
+            {% for i in data %}
+            <tbody>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.product_name}}</td>
+            <td>{{i.category_id}}</td>
+            <td>{{i.price}}</td>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}
